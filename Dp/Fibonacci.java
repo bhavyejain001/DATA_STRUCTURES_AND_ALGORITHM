@@ -1,6 +1,7 @@
 
 public class Fibonacci {
 	
+	//using Tabulation method
 	public static int fiboWithTab(int n ) {
 		int[] dp=new int[n+2];
 		dp[0]=0;
@@ -12,7 +13,7 @@ public class Fibonacci {
 	}
 	
 	
-	//using using memoization (Top down approach)
+	// using memoization (Top down approach)
 	public static int fiboWithMemo(int[] dp , int n) {
 		if(n==0 || n==1) {
 			return n;
