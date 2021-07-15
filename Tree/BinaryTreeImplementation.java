@@ -217,6 +217,38 @@ class BinaryTreeOperations{
 		kthDistance(root.left, kth-1);
 		kthDistance(root.right, kth-1);
 	}
+	
+	int findMax(BinaryTree<Integer> root) {
+		if(root == null) {
+			return Integer.MIN_VALUE;
+		}
+		int res = root.data;
+		int leftmax = findMax(root.left);
+		int rightMax = findMax(root.right);
+		if(res < leftmax) {
+			res = leftmax;
+		}
+		if(res < rightMax) {
+			res = rightMax;
+		}
+		return res;
+	}
+	
+	int findMin(BinaryTree<Integer> root) {
+		if(root == null) {
+			return Integer.MAX_VALUE;
+		}
+		int res = root.data;
+		int leftmin = findMin(root.left);
+		int rightMin = findMin(root.right);
+		if(res > leftmin) {
+			res = leftmin;
+		}
+		if(res > rightMin) {
+			res = rightMin;
+		}
+		return res;
+	}
 }
 public class BinaryTreeImplementation {
 	
